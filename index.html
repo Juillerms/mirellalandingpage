@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUERO INJUSTIÇA | Proteção da Infância Sem Vigilância</title>
+  <meta name="description" content="Conheça o projeto QUERO INJUSTIÇA: proteção da infância online com Zero-Knowledge Proofs, privacidade por design e inclusão digital real.">
+  <style>
+    :root {
+      --bg: #f4f7ff;
+      --bg-soft: #eaf0ff;
+      --card: #ffffff;
+      --card-2: #f6f8ff;
+      --text: #1e2c52;
+      --muted: #576a96;
+      --primary: #8ea8ff;
+      --primary-2: #9ddff8;
+      --danger: #ff8ea8;
+      --ok: #7fdcb5;
+      --shadow: 0 16px 32px rgba(72, 98, 164, 0.14);
+      --radius: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(1200px 700px at 10% -10%, #d7e3ff 0%, transparent 55%),
+                  radial-gradient(900px 600px at 90% 0%, #dff4ff 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(244, 247, 255, 0.88);
+      border-bottom: 1px solid rgba(72, 98, 164, 0.14);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 72px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: grid;
+      place-items: center;
+      color: #23396f;
+      font-weight: 900;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.8rem 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s transform ease, 0.2s opacity ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--primary), var(--primary-2));
+      color: #071027;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(94, 118, 182, 0.35);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .hero {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary-2);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.4vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.6;
+      max-width: 64ch;
+    }
+
+    .hero-actions {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(170deg, #ffffff, #eff4ff);
+      border: 1px solid rgba(96, 121, 189, 0.2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .stat-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .stat-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .stat-list .label {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .stat-list .value {
+      min-width: 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 72ch;
+      line-height: 1.6;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid rgba(102, 126, 193, 0.16);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.06rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .scene-tag {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      background: rgba(116, 144, 214, 0.15);
+      color: #415b96;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+      color: #08112a;
+      background: linear-gradient(120deg, var(--ok), #98ffcf);
+    }
+
+    .pill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+
+    .pill-list li {
+      border: 1px solid rgba(102, 126, 193, 0.26);
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem;
+      color: #47629e;
+      font-size: 0.86rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0.8rem;
+      align-items: start;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(102, 126, 193, 0.18);
+      border-radius: 12px;
+      padding: 0.9rem;
+    }
+
+    .timeline-time {
+      font-weight: 800;
+      color: var(--primary-2);
+    }
+
+    .cta {
+      background: linear-gradient(170deg, #ffffff, #e9f3ff);
+      border: 1px solid rgba(102, 126, 193, 0.22);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      margin-bottom: 0.7rem;
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.6;
+      margin-bottom: 1.3rem;
+    }
+
+    .footer {
+      padding: 2.5rem 0 3.5rem;
+      color: #6a7eaf;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.1rem;
+      color: #6b82b6;
+      font-size: 0.9rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+      box-shadow: 0 0 14px rgba(127, 220, 181, 0.65);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        min-height: auto;
+        padding: 0.8rem 0;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-list li {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-badge">QI</span>
+        <span>QUERO INJUSTIÇA</span>
+      </div>
+      <nav class="nav">
+        <a href="#problema">Problema</a>
+        <a href="#solucao">Solução</a>
+        <a href="#fluxo">Fluxo técnico</a>
+        <a href="#video">Roteiro</a>
+        <a href="#participar">Participar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Proteção da infância e direitos digitais</span>
+          <h1>Segurança infantil online sem vigilância em massa.</h1>
+          <p class="lead">
+            O projeto <strong>QUERO INJUSTIÇA</strong> propõe proteger crianças e adolescentes sem exigir RG, biometria
+            ou coleta excessiva de dados.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#participar">Quero apoiar o projeto</a>
+            <a class="btn btn-ghost" href="#solucao">Entender a solução ZKP</a>
+          </div>
+          <div class="kicker">
+            <span class="dot"></span>
+            <span>Privacy by Design + Inclusão digital + Conformidade LGPD/GDPR</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Resumo do diagnóstico">
+          <h3>O que está em jogo</h3>
+          <ul class="stat-list">
+            <li><span class="label">Privacidade</span><span class="value">Provar idade sem expor identidade completa.</span></li>
+            <li><span class="label">Inclusão</span><span class="value">Sem barreiras de documento ou aparelho caro.</span></li>
+            <li><span class="label">Segurança</span><span class="value">Menos dado centralizado, menos risco de vazamento.</span></li>
+            <li><span class="label">Dignidade</span><span class="value">Proteção sem vigilância contínua.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problema">
+      <div class="container">
+        <h2 class="section-title">O paradoxo atual: proteger exigindo exposição</h2>
+        <p class="section-subtitle">
+          Hoje, para acessar jogos, redes sociais e serviços digitais, muitos jovens são levados a entregar dados extremamente sensíveis.
+          Em vez de reduzir riscos, esse modelo pode ampliar violações de privacidade e aprofundar desigualdades de acesso.
+        </p>
+        <div class="grid-2">
+          <article class="card">
+            <span class="scene-tag">Cena 1 • 15s</span>
+            <h3>O Paradoxo da Proteção</h3>
+            <p>Para acessar uma plataforma, a criança precisa entregar dados íntimos. Segurança vira exposição.</p>
+          </article>
+          <article class="card">
+            <span class="scene-tag">Cena 2 • 25s</span>
+            <h3>O Muro da Exclusão</h3>
+            <p>Além do risco de vazamento, muitos jovens ficam de fora por falta de documentos ou tecnologia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucao">
+      <div class="container">
+        <h2 class="section-title">A virada: Zero-Knowledge Proofs (ZKP)</h2>
+        <p class="section-subtitle">
+          A proposta é simples: provar que a pessoa tem a idade mínima necessária sem revelar sua identidade.
+          Com ZKP, a plataforma recebe apenas uma confirmação criptográfica de elegibilidade, sem acesso ao nome, documento ou biometria.
+        </p>
+        <div class="grid-2">
+          <article class="card">
+            <span class="scene-tag">Cena 3 • 30s</span>
+            <h3>Privacidade por Design</h3>
+            <p>Uma credencial assinada comprova a idade mínima sem revelar nome, documento ou biometria.</p>
+            <ul class="pill-list">
+              <li>Mínima coleta de dados</li>
+              <li>Sem armazenamento de biometria</li>
+              <li>Sem rastreio identitário desnecessário</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="scene-tag">Cena 4 • 30s</span>
+            <h3>Base técnica e regulatória</h3>
+            <p>Fluxo alinhado a <strong>Privacy by Design</strong> e às regras de proteção de dados.</p>
+            <ul class="pill-list">
+              <li>Padrões W3C</li>
+              <li>Conformidade LGPD</li>
+              <li>Conformidade GDPR</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fluxo">
+      <div class="container">
+        <h2 class="section-title">Como funciona o fluxo técnico</h2>
+        <p class="section-subtitle">
+          Um modelo de verificação descentralizado reduz riscos sistêmicos e evita a criação de megabancos de dados sensíveis.
+        </p>
+        <div class="roadmap">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Órgão Certificador Independente</h3>
+            <p>Emite credencial criptográfica com critério de idade, sem expor identidade completa.</p>
+          </article>
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Prova Criptográfica (ZKP)</h3>
+            <p>O usuário gera prova matemática: cumpre a regra de idade sem abrir seus dados.</p>
+          </article>
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>Plataforma Digital</h3>
+            <p>A plataforma recebe apenas um "sim/não" verificável, com menos risco e menos retenção de dados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2 class="section-title">Estrutura narrativa do vídeo</h2>
+        <p class="section-subtitle">
+          O roteiro foi desenhado para conduzir do problema à proposta concreta, com linguagem acessível e fundamento técnico.
+        </p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-time">0s - 15s</div>
+            <div>
+              <h3>O Paradoxo da Proteção</h3>
+              <p>Questiona a ideia de que segurança digital exige entrega de dados íntimos de crianças.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">15s - 40s</div>
+            <div>
+              <h3>O Muro da Exclusão</h3>
+              <p>Mostra riscos de vazamento e barreiras de acesso para quem não possui documentação ou tecnologia adequada.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">40s - 70s</div>
+            <div>
+              <h3>A Virada com ZKP</h3>
+              <p>Apresenta a alternativa de provar idade sem expor identidade, RG ou biometria.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">70s - 100s</div>
+            <div>
+              <h3>A Prova Técnica</h3>
+              <p>Explica o fluxo, padrões e conformidade regulatória de forma didática.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">100s - 120s</div>
+            <div>
+              <h3>Chamado à Ética</h3>
+              <p>Convida a sociedade a construir um futuro digital mais seguro, livre e inclusivo.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="participar">
+      <div class="container">
+        <div class="cta">
+          <h2>A proteção da infância não pode custar nossa liberdade.</h2>
+          <p>
+            Junte-se ao projeto <strong>QUERO INJUSTIÇA</strong> para defender um ecossistema digital em que segurança, privacidade e inclusão caminham juntas.
+            Acesse o diagnóstico completo, compartilhe esta proposta e participe da articulação por políticas e tecnologias mais justas.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#">Acessar diagnóstico completo</a>
+            <a class="btn btn-ghost" href="#">Entrar em contato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>QUERO INJUSTIÇA</strong> — Direitos digitais, proteção da infância e privacidade por padrão.</p>
+    </div>
+  </footer>
+</body>
+</html>
