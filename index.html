@@ -351,8 +351,231 @@
       box-shadow: 0 0 14px rgba(127, 220, 181, 0.65);
     }
 
+    .problema-intro,
     .solucao-intro {
       margin-bottom: 2rem;
+    }
+
+    .problem-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .problem-pillar {
+      background: var(--card);
+      border: 1px solid rgba(255, 142, 168, 0.25);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      text-align: center;
+    }
+
+    .problem-pillar .pillar-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 0.65rem;
+      border-radius: 12px;
+      background: rgba(255, 142, 168, 0.18);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+    }
+
+    .problem-pillar h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .problem-pillar p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .consequence-demo {
+      background: linear-gradient(170deg, #fff8fa, #ffffff);
+      border: 1px solid rgba(255, 142, 168, 0.28);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .consequence-demo h3 {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .consequence-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.4rem;
+    }
+
+    .consequence-node {
+      text-align: center;
+      min-width: 95px;
+      max-width: 130px;
+    }
+
+    .consequence-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 0.45rem;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: rgba(255, 142, 168, 0.2);
+      border: 1px solid rgba(255, 142, 168, 0.35);
+    }
+
+    .consequence-icon--alert {
+      background: rgba(255, 142, 168, 0.35);
+    }
+
+    .consequence-node strong {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .consequence-node span {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.3;
+      display: block;
+    }
+
+    .consequence-arrow {
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .consequence-caption {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #8a4d5f;
+      padding: 0.6rem 0.9rem;
+      background: rgba(255, 142, 168, 0.1);
+      border-radius: 10px;
+      border: 1px dashed rgba(255, 142, 168, 0.4);
+    }
+
+    .dual-impact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .impact-card {
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      border: 1px solid rgba(102, 126, 193, 0.18);
+    }
+
+    .impact-card--leak {
+      background: linear-gradient(180deg, #fff5f7, #ffffff);
+      border-color: rgba(255, 142, 168, 0.3);
+    }
+
+    .impact-card--exclude {
+      background: linear-gradient(180deg, #f5f7ff, #ffffff);
+      border-color: rgba(102, 126, 193, 0.28);
+    }
+
+    .impact-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .impact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .impact-list li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .impact-card--leak .impact-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .impact-card--exclude .impact-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #6b82b6;
+      font-weight: 700;
+    }
+
+    .collect-panel {
+      background: #ffffff;
+      border: 1px solid rgba(255, 142, 168, 0.3);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .collect-panel h4 {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #9a5068;
+      margin-bottom: 0.85rem;
+    }
+
+    .collect-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .collect-tag {
+      font-size: 0.82rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      background: rgba(255, 142, 168, 0.15);
+      color: #8a4d5f;
+      border: 1px solid rgba(255, 142, 168, 0.25);
+    }
+
+    .collect-note {
+      margin-top: 0.85rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .problem-quote {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      padding: 1rem;
+      border-left: 4px solid var(--danger);
+      background: rgba(255, 142, 168, 0.1);
+      border-radius: 0 12px 12px 0;
     }
 
     .compare {
@@ -607,15 +830,18 @@
     }
 
     @media (max-width: 980px) {
-      .hero-grid, .grid-2, .roadmap, .compare, .data-split, .benefit-grid {
+      .hero-grid, .grid-2, .roadmap, .compare, .data-split, .benefit-grid,
+      .problem-pillars, .dual-impact {
         grid-template-columns: 1fr;
       }
 
-      .portal-flow {
+      .portal-flow,
+      .consequence-flow {
         flex-direction: column;
       }
 
-      .portal-arrow {
+      .portal-arrow,
+      .consequence-arrow {
         transform: rotate(90deg);
       }
 
@@ -685,23 +911,90 @@
 
     <section id="problema">
       <div class="container">
-        <h2 class="section-title">O paradoxo atual: proteger exigindo exposição</h2>
-        <p class="section-subtitle">
-          Hoje, para acessar jogos, redes sociais e serviços digitais, muitos jovens são levados a entregar dados extremamente sensíveis.
-          Em vez de reduzir riscos, esse modelo pode ampliar violações de privacidade e aprofundar desigualdades de acesso.
-        </p>
-        <div class="grid-2">
-          <article class="card">
-            <span class="scene-tag">Cena 1 • 15s</span>
-            <h3>O Paradoxo da Proteção</h3>
-            <p>Para acessar uma plataforma, a criança precisa entregar dados íntimos. Segurança vira exposição.</p>
+        <div class="problema-intro">
+          <h2 class="section-title">O paradoxo atual: proteger exigindo exposição</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            Verificação etária virou coleta em massa — e quem não consegue provar identidade fica de fora.
+          </p>
+        </div>
+
+        <div class="problem-pillars" role="group" aria-label="Três faces do problema">
+          <article class="problem-pillar">
+            <div class="pillar-icon" aria-hidden="true">📄</div>
+            <h4>Exposição de dados</h4>
+            <p>RG, selfie e biometria viram requisito para “proteger” — e vão para bases privadas.</p>
           </article>
-          <article class="card">
-            <span class="scene-tag">Cena 2 • 25s</span>
-            <h3>O Muro da Exclusão</h3>
-            <p>Além do risco de vazamento, muitos jovens ficam de fora por falta de documentos ou tecnologia.</p>
+          <article class="problem-pillar">
+            <div class="pillar-icon" aria-hidden="true">🚧</div>
+            <h4>Exclusão digital</h4>
+            <p>Sem documento ou aparelho adequado, o jovem não entra no ambiente online.</p>
+          </article>
+          <article class="problem-pillar">
+            <div class="pillar-icon" aria-hidden="true">👁️</div>
+            <h4>Vigilância normalizada</h4>
+            <p>Segurança confundida com monitoramento contínuo de crianças e adolescentes.</p>
           </article>
         </div>
+
+        <div class="consequence-demo" aria-label="Cadeia de consequências do modelo atual">
+          <h3>O que o modelo atual produz</h3>
+          <div class="consequence-flow">
+            <div class="consequence-node">
+              <div class="consequence-icon" aria-hidden="true">🎮</div>
+              <strong>Acesso bloqueado</strong>
+              <span>Plataforma exige verificação</span>
+            </div>
+            <span class="consequence-arrow" aria-hidden="true">→</span>
+            <div class="consequence-node">
+              <div class="consequence-icon" aria-hidden="true">📤</div>
+              <strong>Coleta intensa</strong>
+              <span>Dados íntimos enviados</span>
+            </div>
+            <span class="consequence-arrow" aria-hidden="true">→</span>
+            <div class="consequence-node">
+              <div class="consequence-icon consequence-icon--alert" aria-hidden="true">⚡</div>
+              <strong>Risco real</strong>
+              <span>Vazamento ou exclusão</span>
+            </div>
+          </div>
+          <p class="consequence-caption">O modelo prioriza engajamento e controle — não dignidade nem privacidade.</p>
+        </div>
+
+        <div class="dual-impact" role="group" aria-label="Impactos do problema">
+          <article class="impact-card impact-card--leak">
+            <h4><span aria-hidden="true">🔓</span> Risco de privacidade</h4>
+            <ul class="impact-list">
+              <li>Megabancos de dados sensíveis de menores</li>
+              <li>Alvo constante de ataques e vazamentos</li>
+              <li>Empresas com dados que não precisam ter</li>
+            </ul>
+          </article>
+          <article class="impact-card impact-card--exclude">
+            <h4><span aria-hidden="true">🧱</span> Muro da exclusão</h4>
+            <ul class="impact-list">
+              <li>Falta de RG ou documentação regular</li>
+              <li>Dispositivo ou conexão inadequados</li>
+              <li>Jovens periféricos fora do mundo digital</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="collect-panel" aria-label="Dados exigidos hoje">
+          <h4>O que as plataformas passam a exigir</h4>
+          <div class="collect-tags">
+            <span class="collect-tag">Foto do RG</span>
+            <span class="collect-tag">Reconhecimento facial</span>
+            <span class="collect-tag">Biometria</span>
+            <span class="collect-tag">Nome completo</span>
+            <span class="collect-tag">CPF / documento</span>
+            <span class="collect-tag">Selfie em tempo real</span>
+          </div>
+          <p class="collect-note">Tudo isso para provar apenas uma coisa: idade. O custo em privacidade e inclusão é desproporcional.</p>
+        </div>
+
+        <blockquote class="problem-quote">
+          “Para proteger crianças na internet, estamos entregando os dados mais íntimos delas às grandes empresas.”
+        </blockquote>
       </div>
     </section>
 
