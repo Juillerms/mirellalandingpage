@@ -351,9 +351,272 @@
       box-shadow: 0 0 14px rgba(127, 220, 181, 0.65);
     }
 
+    .solucao-intro {
+      margin-bottom: 2rem;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-card {
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      border: 1px solid rgba(102, 126, 193, 0.18);
+    }
+
+    .compare-card--old {
+      background: linear-gradient(180deg, #fff5f7, #ffffff);
+      border-color: rgba(255, 142, 168, 0.35);
+    }
+
+    .compare-card--new {
+      background: linear-gradient(180deg, #f0fff8, #ffffff);
+      border-color: rgba(127, 220, 181, 0.45);
+    }
+
+    .compare-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .compare-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .compare-card li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.4;
+      padding-left: 1.35rem;
+      position: relative;
+    }
+
+    .compare-card--old li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .compare-card--new li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #3da87a;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .portal-demo {
+      background: linear-gradient(170deg, #ffffff, #eef4ff);
+      border: 1px solid rgba(102, 126, 193, 0.2);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .portal-demo h3 {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .portal-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.4rem;
+    }
+
+    .portal-node {
+      text-align: center;
+      min-width: 100px;
+      max-width: 140px;
+    }
+
+    .portal-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 0.5rem;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      background: rgba(142, 168, 255, 0.2);
+      border: 1px solid rgba(102, 126, 193, 0.2);
+    }
+
+    .portal-icon--ok {
+      background: rgba(127, 220, 181, 0.35);
+      border-color: rgba(61, 168, 122, 0.35);
+    }
+
+    .portal-node span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .portal-node strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .portal-arrow {
+      color: #8ea8ff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .portal-caption {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.65rem 1rem;
+      background: rgba(127, 220, 181, 0.12);
+      border-radius: 10px;
+      border: 1px dashed rgba(61, 168, 122, 0.35);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefit-item {
+      background: var(--card);
+      border: 1px solid rgba(102, 126, 193, 0.16);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    .benefit-item .benefit-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 0.65rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(142, 168, 255, 0.25), rgba(157, 223, 248, 0.35));
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .benefit-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .data-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .data-box {
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      border: 1px solid rgba(102, 126, 193, 0.16);
+    }
+
+    .data-box--hide {
+      background: #ffffff;
+    }
+
+    .data-box--show {
+      background: linear-gradient(180deg, #e8f8f1, #ffffff);
+      border-color: rgba(127, 220, 181, 0.4);
+    }
+
+    .data-box h4 {
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+    }
+
+    .data-box--show h4 {
+      color: #2d7a5c;
+    }
+
+    .data-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .data-tag {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+      background: rgba(102, 126, 193, 0.1);
+      color: #47629e;
+    }
+
+    .data-box--hide .data-tag {
+      text-decoration: line-through;
+      opacity: 0.75;
+      background: rgba(255, 142, 168, 0.12);
+      color: #9a5068;
+    }
+
+    .data-box--show .data-tag {
+      background: rgba(127, 220, 181, 0.25);
+      color: #2d6b52;
+      font-weight: 600;
+    }
+
+    .zkp-quote {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--primary);
+      background: rgba(142, 168, 255, 0.1);
+      border-radius: 0 12px 12px 0;
+    }
+
     @media (max-width: 980px) {
-      .hero-grid, .grid-2, .roadmap {
+      .hero-grid, .grid-2, .roadmap, .compare, .data-split, .benefit-grid {
         grid-template-columns: 1fr;
+      }
+
+      .portal-flow {
+        flex-direction: column;
+      }
+
+      .portal-arrow {
+        transform: rotate(90deg);
       }
 
       .topbar-inner {
@@ -383,6 +646,7 @@
         <a href="#problema">Problema</a>
         <a href="#solucao">Solução</a>
         <a href="#fluxo">Fluxo técnico</a>
+        <a href="#video">Roteiro</a>
         <a href="#participar">Participar</a>
       </nav>
     </div>
@@ -443,33 +707,106 @@
 
     <section id="solucao">
       <div class="container">
-        <h2 class="section-title">A virada: Zero-Knowledge Proofs (ZKP)</h2>
-        <p class="section-subtitle">
-          A proposta é simples: provar que a pessoa tem a idade mínima necessária sem revelar sua identidade.
-          Com ZKP, a plataforma recebe apenas uma confirmação criptográfica de elegibilidade, sem acesso ao nome, documento ou biometria.
-        </p>
-        <div class="grid-2">
-          <article class="card">
-            <span class="scene-tag">Cena 3 • 30s</span>
-            <h3>Privacidade por Design</h3>
-            <p>Uma credencial assinada comprova a idade mínima sem revelar nome, documento ou biometria.</p>
-            <ul class="pill-list">
-              <li>Mínima coleta de dados</li>
-              <li>Sem armazenamento de biometria</li>
-              <li>Sem rastreio identitário desnecessário</li>
+        <div class="solucao-intro">
+          <h2 class="section-title">A virada: Zero-Knowledge Proofs (ZKP)</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            Provar idade sem revelar identidade — a plataforma recebe só um “sim” criptográfico.
+          </p>
+        </div>
+
+        <div class="compare" role="group" aria-label="Comparativo de modelos">
+          <article class="compare-card compare-card--old">
+            <h3><span aria-hidden="true">⚠️</span> Modelo atual</h3>
+            <ul>
+              <li>RG, selfie ou biometria enviados à plataforma</li>
+              <li>Dados sensíveis armazenados em massa</li>
+              <li>Quem não tem documento fica excluído</li>
+              <li>Proteção ligada à vigilância</li>
             </ul>
           </article>
-          <article class="card">
-            <span class="scene-tag">Cena 4 • 30s</span>
-            <h3>Base técnica e regulatória</h3>
-            <p>Fluxo alinhado a <strong>Privacy by Design</strong> e às regras de proteção de dados.</p>
-            <ul class="pill-list">
-              <li>Padrões W3C</li>
-              <li>Conformidade LGPD</li>
-              <li>Conformidade GDPR</li>
+          <article class="compare-card compare-card--new">
+            <h3><span aria-hidden="true">✨</span> Nossa proposta (ZKP)</h3>
+            <ul>
+              <li>Credencial assinada por órgão independente</li>
+              <li>Prova matemática de elegibilidade</li>
+              <li>Acesso inclusivo, sem expor identidade</li>
+              <li>Privacy by Design desde a origem</li>
             </ul>
           </article>
         </div>
+
+        <blockquote class="zkp-quote">
+          “A plataforma aprende que a regra foi cumprida — não quem você é.”
+        </blockquote>
+
+        <div class="portal-demo" aria-label="Demonstração visual do acesso">
+          <h3>Como o acesso funciona na prática</h3>
+          <div class="portal-flow">
+            <div class="portal-node">
+              <div class="portal-icon" aria-hidden="true">👤</div>
+              <strong>Usuário</strong>
+              <span>Guarda credencial assinada no dispositivo</span>
+            </div>
+            <span class="portal-arrow" aria-hidden="true">→</span>
+            <div class="portal-node">
+              <div class="portal-icon" aria-hidden="true">🔐</div>
+              <strong>Prova ZKP</strong>
+              <span>Gera prova: “idade mínima OK”</span>
+            </div>
+            <span class="portal-arrow" aria-hidden="true">→</span>
+            <div class="portal-node">
+              <div class="portal-icon portal-icon--ok" aria-hidden="true">✓</div>
+              <strong>Portal</strong>
+              <span>Valida e libera — sem ver rosto ou nome</span>
+            </div>
+          </div>
+          <p class="portal-caption">O sistema confirma elegibilidade. Nome, RG e biometria permanecem fora do alcance da plataforma.</p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-item">
+            <div class="benefit-icon" aria-hidden="true">🛡️</div>
+            <h4>Privacidade</h4>
+            <p>Mínima coleta. Sem biometria em servidor.</p>
+          </article>
+          <article class="benefit-item">
+            <div class="benefit-icon" aria-hidden="true">🌐</div>
+            <h4>Inclusão</h4>
+            <p>Menos barreiras de documento e aparelho.</p>
+          </article>
+          <article class="benefit-item">
+            <div class="benefit-icon" aria-hidden="true">🔒</div>
+            <h4>Segurança</h4>
+            <p>Menos megabanco de dados = menos alvo.</p>
+          </article>
+          <article class="benefit-item">
+            <div class="benefit-icon" aria-hidden="true">⚖️</div>
+            <h4>Ética</h4>
+            <p>Proteção infantil sem vigilância contínua.</p>
+          </article>
+        </div>
+
+        <div class="data-split" role="group" aria-label="O que a plataforma recebe">
+          <div class="data-box data-box--hide">
+            <h4>Não vai para a plataforma</h4>
+            <div class="data-tags">
+              <span class="data-tag">Nome completo</span>
+              <span class="data-tag">RG / CPF</span>
+              <span class="data-tag">Biometria</span>
+              <span class="data-tag">Foto do rosto</span>
+              <span class="data-tag">Histórico pessoal</span>
+            </div>
+          </div>
+          <div class="data-box data-box--show">
+            <h4>O que a plataforma recebe</h4>
+            <div class="data-tags">
+              <span class="data-tag">Sim — idade verificada</span>
+              <span class="data-tag">Prova criptográfica válida</span>
+              <span class="data-tag">Conformidade com a regra</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -494,6 +831,52 @@
             <div class="step-number">3</div>
             <h3>Plataforma Digital</h3>
             <p>A plataforma recebe apenas um "sim/não" verificável, com menos risco e menos retenção de dados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2 class="section-title">Estrutura narrativa do vídeo</h2>
+        <p class="section-subtitle">
+          O roteiro foi desenhado para conduzir do problema à proposta concreta, com linguagem acessível e fundamento técnico.
+        </p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-time">0s - 15s</div>
+            <div>
+              <h3>O Paradoxo da Proteção</h3>
+              <p>Questiona a ideia de que segurança digital exige entrega de dados íntimos de crianças.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">15s - 40s</div>
+            <div>
+              <h3>O Muro da Exclusão</h3>
+              <p>Mostra riscos de vazamento e barreiras de acesso para quem não possui documentação ou tecnologia adequada.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">40s - 70s</div>
+            <div>
+              <h3>A Virada com ZKP</h3>
+              <p>Apresenta a alternativa de provar idade sem expor identidade, RG ou biometria.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">70s - 100s</div>
+            <div>
+              <h3>A Prova Técnica</h3>
+              <p>Explica o fluxo, padrões e conformidade regulatória de forma didática.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">100s - 120s</div>
+            <div>
+              <h3>Chamado à Ética</h3>
+              <p>Convida a sociedade a construir um futuro digital mais seguro, livre e inclusivo.</p>
+            </div>
           </article>
         </div>
       </div>
